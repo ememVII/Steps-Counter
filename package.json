@@ -1,5 +1,6 @@
 {
   "name": "steps-counter-app",
+  "homepage": "/Steps-Counter/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
