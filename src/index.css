@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-color: #ffffff;
+  --box-color: #e3e3e367;
+  --step-bg: #dadada9d;
+  --steps-color: #2dc5f4;
+  --font-color: #242424e1;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--font-color);
+}
+
+.steps,
+.dateCounter {
+  background-color: var(--box-color);
+  border-radius: 10px;
+}
+
+.stepNum span {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: var(--step-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stepNum span.active {
+  background-color: var(--steps-color);
+  color: #fff;
+}
+
+.stepBtn {
+  background-color: var(--steps-color);
+  outline: none;
+}
+
+@layer components {
+  .steps {
+    @apply mt-32 flex w-[80%] flex-col items-center gap-11 p-8 sm:w-[80%] md:w-[70%] lg:w-[50%];
+  }
+  .stepNum,
+  .daysSteps,
+  .daysCounter {
+    @apply flex items-center justify-between text-xl font-light sm:w-96;
+  }
+  .stepMsg {
+    @apply text-center font-semibold tracking-wide;
+  }
+  .stepBtn {
+    @apply rounded-2xl px-4 py-1 sm:px-8 sm:py-2 font-semibold tracking-wider text-white;
+  }
+  .btns {
+    @apply flex w-full justify-between sm:w-4/5;
+  }
+  .closeBtn {
+    @apply absolute right-10 top-5 cursor-pointer text-5xl duration-100 ease-in hover:text-[#2dc5f4];
+  }
+  /* DaysCounter */
+  .dateCounter {
+    @apply my-32 flex w-[80%] flex-col items-center gap-8 p-8 sm:w-[80%] md:w-[70%] lg:w-[50%];
+  }
+}
